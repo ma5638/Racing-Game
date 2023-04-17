@@ -328,7 +328,12 @@ namespace UnityStandardAssets.Utility.Inspector
             var addAllButtonRect = new Rect(x, y, inspectorWidth, lineHeight);
             if (GUI.Button(addAllButtonRect, "Assign using all child objects"))
             {
+
                 var circuit = property.FindPropertyRelative("circuit").objectReferenceValue as WaypointCircuit;
+                // var circuit = gameObject as WaypointCircuit;
+                // if (circuit != null){
+                //     Debug.Log("HAHAHHAAHAHAHAHHAHA");
+                // }
                 var children = new Transform[circuit.transform.childCount];
                 int n = 0;
                 foreach (Transform child in circuit.transform)
